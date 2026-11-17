@@ -1,0 +1,20 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Secrets (in case you ever use an API key)
+.env

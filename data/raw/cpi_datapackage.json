@@ -1,0 +1,91 @@
+{
+  "name": "cpi-us",
+  "title": "US Consumer Price Index and Inflation (CPI)",
+  "description": "Monthly US Consumer Price Index for All Urban Consumers (CPI-U), series CUUR0000SA0, from the US Bureau of Labor Statistics. Covers January 1913 to present. Values are U.S. city averages for all items, base period 1982–84=100. Includes a derived month-on-month inflation rate.",
+  "sources": [
+    {
+      "name": "US Bureau of Labor Statistics",
+      "path": "https://www.bls.gov/cpi/",
+      "title": "US Bureau of Labor Statistics"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "keywords": [
+    "Indicator"
+  ],
+  "resources": [
+    {
+      "path": "data/cpiai.csv",
+      "format": "csv",
+      "mimetype": "text/csv",
+      "description": "Monthly CPI-U index values and derived month-on-month inflation rates for the US city average (all items), from January 1913 to the most recent available month. The first row (1913-01-01) has an empty Inflation value because percent-change calculation requires a prior month.",
+      "sources": [
+        {
+          "name": "BLS Public API v2",
+          "path": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+          "title": "BLS Public API v2"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "description": "Date of the observation in YYYY-MM-DD format, always the first day of the month.",
+            "type": "date",
+            "format": "default"
+          },
+          {
+            "name": "Index",
+            "description": "Monthly Consumer Price Index. Values are U.S. city averages for all items and 1982-84=100.",
+            "type": "number"
+          },
+          {
+            "name": "Inflation",
+            "description": "Monthly Consumer Price Inflation. Values are for U.S. city averages for all items.",
+            "type": "number"
+          }
+        ]
+      },
+      "name": "cpiai"
+    }
+  ],
+  "views": [
+    {
+      "name": "graph",
+      "title": "Monthly Consumer Price Inflation",
+      "specType": "simple",
+      "resources": [
+        "cpiai"
+      ],
+      "spec": {
+        "type": "column",
+        "group": "Date",
+        "series": [
+          "Inflation"
+        ]
+      }
+    },
+    {
+      "name": "graph",
+      "title": "Monthly Consumer Price Index",
+      "specType": "simple",
+      "resources": [
+        "cpiai"
+      ],
+      "spec": {
+        "type": "line",
+        "group": "Date",
+        "series": [
+          "Index"
+        ]
+      }
+    }
+  ],
+  "collection": "inflation"
+}
