@@ -1,0 +1,29 @@
+:root {
+    --text: #222222;
+    --muted: #555555;
+    --background: #ffffff;
+    --gas: #1f4e79;
+    --crude: #c55a11;
+}
+
+body{
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: var(--background);
+}
+
+header, main{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+header h1 {
+    margin-bottom: 4px;
+}
+
+header p{
+    margin-top: 0;
+    color: var(--muted);
+}
