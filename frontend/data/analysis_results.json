@@ -1,0 +1,281 @@
+{
+  "date_range": [
+    "1990-08-20",
+    "2025-06-23"
+  ],
+  "correlation": {
+    "levels_pearson": 0.9638,
+    "changes_pearson": 0.5511,
+    "changes_pearson_crude_1wk_earlier": 0.3916
+  },
+  "cointegration_p_value": 0.0159,
+  "levels_regression": {
+    "slope": 1.3219,
+    "intercept": 0.6036,
+    "r_squared": 0.9289
+  },
+  "lag_correlation": [
+    {
+      "lag": 0,
+      "correlation": 0.5511
+    },
+    {
+      "lag": 1,
+      "correlation": 0.3916
+    },
+    {
+      "lag": 2,
+      "correlation": 0.2219
+    },
+    {
+      "lag": 3,
+      "correlation": 0.1743
+    },
+    {
+      "lag": 4,
+      "correlation": 0.1374
+    },
+    {
+      "lag": 5,
+      "correlation": 0.1058
+    },
+    {
+      "lag": 6,
+      "correlation": 0.0774
+    },
+    {
+      "lag": 7,
+      "correlation": 0.0517
+    },
+    {
+      "lag": 8,
+      "correlation": 0.0495
+    }
+  ],
+  "asymmetry": {
+    "regular": [
+      {
+        "week": 0,
+        "increase": 0.5662,
+        "decrease": 0.3169,
+        "p_value": 0.0059
+      },
+      {
+        "week": 1,
+        "increase": 0.731,
+        "decrease": 0.6626,
+        "p_value": 0.5129
+      },
+      {
+        "week": 2,
+        "increase": 0.8165,
+        "decrease": 0.8266,
+        "p_value": 0.9395
+      },
+      {
+        "week": 3,
+        "increase": 0.835,
+        "decrease": 0.9637,
+        "p_value": 0.4062
+      },
+      {
+        "week": 4,
+        "increase": 0.8759,
+        "decrease": 1.0698,
+        "p_value": 0.1961
+      },
+      {
+        "week": 5,
+        "increase": 0.9211,
+        "decrease": 1.0996,
+        "p_value": 0.2181
+      },
+      {
+        "week": 6,
+        "increase": 0.9479,
+        "decrease": 1.1287,
+        "p_value": 0.224
+      },
+      {
+        "week": 7,
+        "increase": 1.0054,
+        "decrease": 1.1133,
+        "p_value": 0.4331
+      },
+      {
+        "week": 8,
+        "increase": 1.0469,
+        "decrease": 1.0462,
+        "p_value": 0.9959
+      }
+    ],
+    "midgrade": [
+      {
+        "week": 0,
+        "increase": 0.546,
+        "decrease": 0.2848,
+        "p_value": 0.0062
+      },
+      {
+        "week": 1,
+        "increase": 0.7292,
+        "decrease": 0.6156,
+        "p_value": 0.3062
+      },
+      {
+        "week": 2,
+        "increase": 0.8211,
+        "decrease": 0.787,
+        "p_value": 0.8028
+      },
+      {
+        "week": 3,
+        "increase": 0.8417,
+        "decrease": 0.9258,
+        "p_value": 0.5901
+      },
+      {
+        "week": 4,
+        "increase": 0.883,
+        "decrease": 1.0389,
+        "p_value": 0.3081
+      },
+      {
+        "week": 5,
+        "increase": 0.92,
+        "decrease": 1.0829,
+        "p_value": 0.2818
+      },
+      {
+        "week": 6,
+        "increase": 0.9421,
+        "decrease": 1.1237,
+        "p_value": 0.252
+      },
+      {
+        "week": 7,
+        "increase": 1.006,
+        "decrease": 1.1149,
+        "p_value": 0.4652
+      },
+      {
+        "week": 8,
+        "increase": 1.0489,
+        "decrease": 1.0571,
+        "p_value": 0.9575
+      }
+    ],
+    "premium": [
+      {
+        "week": 0,
+        "increase": 0.5396,
+        "decrease": 0.284,
+        "p_value": 0.0077
+      },
+      {
+        "week": 1,
+        "increase": 0.7255,
+        "decrease": 0.6113,
+        "p_value": 0.2995
+      },
+      {
+        "week": 2,
+        "increase": 0.8153,
+        "decrease": 0.7869,
+        "p_value": 0.8349
+      },
+      {
+        "week": 3,
+        "increase": 0.8372,
+        "decrease": 0.9292,
+        "p_value": 0.5559
+      },
+      {
+        "week": 4,
+        "increase": 0.8798,
+        "decrease": 1.0409,
+        "p_value": 0.2925
+      },
+      {
+        "week": 5,
+        "increase": 0.9191,
+        "decrease": 1.0824,
+        "p_value": 0.2788
+      },
+      {
+        "week": 6,
+        "increase": 0.9457,
+        "decrease": 1.1194,
+        "p_value": 0.2707
+      },
+      {
+        "week": 7,
+        "increase": 1.0088,
+        "decrease": 1.1099,
+        "p_value": 0.4994
+      },
+      {
+        "week": 8,
+        "increase": 1.0533,
+        "decrease": 1.0489,
+        "p_value": 0.9772
+      }
+    ],
+    "diesel": [
+      {
+        "week": 0,
+        "increase": 0.6605,
+        "decrease": 0.2659,
+        "p_value": 0.009
+      },
+      {
+        "week": 1,
+        "increase": 0.8847,
+        "decrease": 0.5184,
+        "p_value": 0.0335
+      },
+      {
+        "week": 2,
+        "increase": 0.9709,
+        "decrease": 0.6935,
+        "p_value": 0.0941
+      },
+      {
+        "week": 3,
+        "increase": 0.9642,
+        "decrease": 0.8251,
+        "p_value": 0.3975
+      },
+      {
+        "week": 4,
+        "increase": 1.0175,
+        "decrease": 0.8906,
+        "p_value": 0.3749
+      },
+      {
+        "week": 5,
+        "increase": 1.0851,
+        "decrease": 0.9269,
+        "p_value": 0.2181
+      },
+      {
+        "week": 6,
+        "increase": 1.1354,
+        "decrease": 0.9277,
+        "p_value": 0.1838
+      },
+      {
+        "week": 7,
+        "increase": 1.1635,
+        "decrease": 0.993,
+        "p_value": 0.2854
+      },
+      {
+        "week": 8,
+        "increase": 1.1323,
+        "decrease": 1.0257,
+        "p_value": 0.5289
+      }
+    ]
+  }
+}
