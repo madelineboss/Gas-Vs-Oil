@@ -1,9 +1,12 @@
 :root {
-    --text: #222222;
-    --muted: #555555;
-    --background: #ffffff;
-    --gas: #1f4e79;
-    --crude: #c55a11;
+  --text: #222222;
+  --muted: #555555;
+  --background: #ffffff;
+  --gas: #6a1b9a;                          /* deep purple: retail fuel price */
+  --crude: #e0559b;                        /* pink: crude oil */
+  --spread-fill: rgba(106, 27, 154, 0.14); /* light purple: the spread */
+  --increase: #e0559b;                     /* pink: crude price increases */
+  --decrease: #6a1b9a;                     /* purple: crude price decreases */
 }
 
 body{
@@ -126,7 +129,7 @@ header p{
 
 .swatch.gas { background: var(--gas); }
 .swatch.crude { background: var(--crude); }
-.swatch.spread { background: rgba(31, 78, 121, 0.18); }
+.swatch.spread { background: var(--spread-fill); }
 
 /* ---- Chart marks ---- */
 .line {
@@ -138,7 +141,7 @@ header p{
 .crude-line { stroke: var(--crude); }
 
 .spread-area {
-  fill: rgba(31, 78, 121, 0.12);
+  fill: var(--spread-fill);
 }
 
 .axis text {
