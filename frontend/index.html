@@ -7,17 +7,46 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+  <header>
     <h1>From Barrel to Pump</h1>
-    <p>Coming soon.</p>
-    </header>
+    <p>How closely do U.S. gas prices follow the cost of crude oil?</p>
+  </header>
 
-    <main>
-        <p id="status">Loading data...</p>
-    </main>
+  <main>
+    <section class="panel">
+      <div class="controls">
+        <div class="control-group">
+          <span class="control-label">Fuel</span>
+          <div class="toggle" id="fuel-toggle">
+            <button type="button" data-value="regular" aria-pressed="true">Regular</button>
+            <button type="button" data-value="midgrade" aria-pressed="false">Midgrade</button>
+            <button type="button" data-value="premium" aria-pressed="false">Premium</button>
+            <button type="button" data-value="diesel" aria-pressed="false">Diesel</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <span class="control-label">Dollars</span>
+          <div class="toggle" id="dollar-toggle">
+            <button type="button" data-value="nominal" aria-pressed="true">Nominal</button>
+            <button type="button" data-value="real" aria-pressed="false">Inflation-adjusted</button>
+          </div>
+        </div>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+      <h2 id="line-title" class="chart-title"></h2>
+      <div class="legend">
+        <span class="legend-item"><span class="swatch gas"></span><span id="gas-legend-label">Regular Gasoline (retail)</span></span>
+        <span class="legend-item"><span class="swatch crude"></span>WTI crude oil, per gallon (barrel ÷ 42)</span>
+        <span class="legend-item"><span class="swatch spread"></span>Spread: refining, distribution, taxes, margin</span>
+      </div>
+      <div id="line-chart" class="chart"></div>
+      <p class="source">Source: U.S. Energy Information Administration (weekly retail prices, WTI spot price); BLS CPI-U for inflation adjustment.</p>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
-EOF
