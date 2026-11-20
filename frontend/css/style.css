@@ -27,3 +27,165 @@ header p{
     margin-top: 0;
     color: var(--muted);
 }
+
+/* ---- Layout ---- */
+.panel {
+  margin: 24px 0;
+}
+
+.chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart-title {
+  font-size: 18px;
+  margin: 20px 0 8px;
+}
+
+.source {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---- Controls ---- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.toggle {
+  display: flex;
+  border: 1px solid #888888;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toggle button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-left: 1px solid #888888;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.toggle button:first-child {
+  border-left: 0;
+}
+
+.toggle button[aria-pressed="true"] {
+  background: var(--gas);
+  color: #ffffff;
+}
+
+.toggle button:focus-visible {
+  outline: 2px solid var(--crude);
+  outline-offset: -2px;
+}
+
+/* ---- Legend ---- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: -2px;
+}
+
+.swatch.gas { background: var(--gas); }
+.swatch.crude { background: var(--crude); }
+.swatch.spread { background: rgba(31, 78, 121, 0.18); }
+
+/* ---- Chart marks ---- */
+.line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.gas-line { stroke: var(--gas); }
+.crude-line { stroke: var(--crude); }
+
+.spread-area {
+  fill: rgba(31, 78, 121, 0.12);
+}
+
+.axis text {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.axis-label {
+  font-size: 13px;
+  fill: var(--text);
+}
+
+.grid line {
+  stroke: #e5e5e5;
+}
+
+.overlay {
+  fill: transparent;
+  cursor: crosshair;
+}
+
+/* ---- Hover ---- */
+.hover-line {
+  stroke: #444444;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  pointer-events: none;
+}
+
+.hover-dot {
+  fill: #ffffff;
+  stroke-width: 2.5;
+  pointer-events: none;
+}
+
+.gas-dot { stroke: var(--gas); }
+.crude-dot { stroke: var(--crude); }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  pointer-events: none;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
