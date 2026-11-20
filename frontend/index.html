@@ -13,26 +13,27 @@
   </header>
 
   <main>
-    <section class="panel">
-      <div class="controls">
-        <div class="control-group">
-          <span class="control-label">Fuel</span>
-          <div class="toggle" id="fuel-toggle">
-            <button type="button" data-value="regular" aria-pressed="true">Regular</button>
-            <button type="button" data-value="midgrade" aria-pressed="false">Midgrade</button>
-            <button type="button" data-value="premium" aria-pressed="false">Premium</button>
-            <button type="button" data-value="diesel" aria-pressed="false">Diesel</button>
-          </div>
-        </div>
-        <div class="control-group">
-          <span class="control-label">Dollars</span>
-          <div class="toggle" id="dollar-toggle">
-            <button type="button" data-value="nominal" aria-pressed="true">Nominal</button>
-            <button type="button" data-value="real" aria-pressed="false">Inflation-adjusted</button>
-          </div>
+    <div class="controls">
+      <div class="control-group">
+        <span class="control-label">Fuel</span>
+        <div class="toggle" id="fuel-toggle">
+          <button type="button" data-value="regular" aria-pressed="true">Regular</button>
+          <button type="button" data-value="midgrade" aria-pressed="false">Midgrade</button>
+          <button type="button" data-value="premium" aria-pressed="false">Premium</button>
+          <button type="button" data-value="diesel" aria-pressed="false">Diesel</button>
         </div>
       </div>
+      <div class="control-group">
+        <span class="control-label">Dollars</span>
+        <div class="toggle" id="dollar-toggle">
+          <button type="button" data-value="nominal" aria-pressed="true">Nominal</button>
+          <button type="button" data-value="real" aria-pressed="false">Inflation-adjusted</button>
+        </div>
+      </div>
+    </div>
 
+    <!-- Chart 1: timeline -->
+    <section class="panel">
       <h2 id="line-title" class="chart-title"></h2>
       <div class="legend">
         <span class="legend-item"><span class="swatch gas"></span><span id="gas-legend-label">Regular Gasoline (retail)</span></span>
@@ -41,6 +42,19 @@
       </div>
       <div id="line-chart" class="chart"></div>
       <p class="source">Source: U.S. Energy Information Administration (weekly retail prices, WTI spot price); BLS CPI-U for inflation adjustment.</p>
+    </section>
+
+    <!-- Chart 2: rockets and feathers -->
+    <section class="panel">
+      <h2 id="bar-title" class="chart-title"></h2>
+      <p class="chart-subtitle">Do pump prices rise faster than they fall? Each pair of bars shows how much of a crude oil price change has reached the pump after a given number of weeks.</p>
+      <div class="legend">
+        <span class="legend-item"><span class="swatch increase"></span>After crude prices rise</span>
+        <span class="legend-item"><span class="swatch decrease"></span>After crude prices fall</span>
+        <span class="legend-item"><strong class="star-key">*</strong>Difference is statistically significant (p &lt; 0.05)</span>
+      </div>
+      <div id="bar-chart" class="chart"></div>
+      <p class="source">Source: distributed-lag regression of weekly price changes, 1990–2025 (see <code>02_analysis.ipynb</code>). Based on nominal prices, so the dollar toggle does not change this chart.</p>
     </section>
   </main>
 

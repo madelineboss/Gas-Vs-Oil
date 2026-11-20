@@ -1,5 +1,6 @@
 import { loadData, getSeries } from "./data.js";
 import { createLineChart } from "./lineChart.js";
+import { createBarChart } from "./barChart.js";
 
 const FUEL_LABELS = {
   regular: "Regular Gasoline",
@@ -22,20 +23,27 @@ function setupToggle(id, onChange) {
 }
 
 async function init() {
-  const { weeks } = await loadData();
+  const { weeks, results } = await loadData();
   const lineChart = createLineChart("#line-chart");
+  const barChart = createBarChart("#bar-chart");
 
   function render() {
-    const series = getSeries(weeks, state.fuel, state.real);
     const fuelLabel = FUEL_LABELS[state.fuel];
 
+    // Chart 1: timeline
+    const series = getSeries(weeks, state.fuel, state.real);
     lineChart.update(series, { real: state.real, fuelLabel });
-
     d3.select("#line-title").text(
       `${fuelLabel} vs. Crude Oil Cost per Gallon, 1990–2025 ` +
       `(${state.real ? "June 2025 dollars" : "nominal dollars"})`
     );
     d3.select("#gas-legend-label").text(`${fuelLabel} (retail)`);
+
+    // Chart 2: rockets and feathers
+    barChart.update(results.asymmetry[state.fuel]);
+    d3.select("#bar-title").text(
+      `How Much of a Crude Oil Price Change Reaches the Pump: ${fuelLabel}`
+    );
   }
 
   setupToggle("fuel-toggle", value => { state.fuel = value; render(); });

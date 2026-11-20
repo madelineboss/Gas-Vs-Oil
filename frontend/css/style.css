@@ -192,3 +192,57 @@ header p{
   line-height: 1.5;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
+
+/* ---- Shared controls at the top ---- */
+main > .controls {
+  margin: 16px 0 8px;
+}
+
+.chart-subtitle {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---- Bar chart ---- */
+.swatch.increase { background: var(--increase); }
+.swatch.decrease { background: var(--decrease); }
+
+.bar.increase { fill: var(--increase); }
+.bar.decrease { fill: var(--decrease); }
+
+.hit-area {
+  fill: transparent;
+}
+
+.week-group:hover .hit-area {
+  fill: rgba(106, 27, 154, 0.06);
+}
+
+.reference-line {
+  stroke: #444444;
+  stroke-width: 1;
+  stroke-dasharray: 5 4;
+}
+
+.reference-label {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.sig-star {
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--text);
+}
+
+.star-key {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tooltip-note {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
