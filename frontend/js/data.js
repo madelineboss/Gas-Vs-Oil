@@ -34,7 +34,7 @@ export async function loadData() {
         return week;
     });
 
-    return {week, results};
+    return {weeks, results};
 }
 
 // Returns the gas and crude series for one fuel, in nominal or real dollars
