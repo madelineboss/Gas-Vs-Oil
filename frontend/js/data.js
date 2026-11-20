@@ -20,7 +20,7 @@ export async function loadData() {
     const weeks = rows.map(row => {
         const week = {
             date: parseDate(row.date),
-            crude: toNumber(row.grude_gal),
+            crude: toNumber(row.crude_gal),
             crudeReal: toNumber(row.crude_gal_real),
             flagged: row.flag_regular_jump === "True" || row.flag_crude_jump === "True",
         };
@@ -28,7 +28,7 @@ export async function loadData() {
 
         for (const fuel of FUELS) {
             week[fuel] = toNumber(row[fuel]);
-            week[`${fuel}real`] = toNumber(row[`${fuel}_real`]);
+            week[`${fuel}Real`] = toNumber(row[`${fuel}_real`]);
         }
 
         return week;
