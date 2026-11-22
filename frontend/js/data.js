@@ -50,3 +50,46 @@ export function getSeries(weeks, fuel, real) {
         flagged: w.flagged,
     }));
 }
+
+// Correlation between two lists of numbers (Pearson's r)
+function pearson(pairs) {
+  if (pairs.length < 3) return null;
+  const meanA = d3.mean(pairs, p => p[0]);
+  const meanB = d3.mean(pairs, p => p[1]);
+  let sumAB = 0, sumAA = 0, sumBB = 0;
+  for (const [a, b] of pairs) {
+    sumAB += (a - meanA) * (b - meanB);
+    sumAA += (a - meanA) ** 2;
+    sumBB += (b - meanB) ** 2;
+  }
+  return sumAA && sumBB ? sumAB / Math.sqrt(sumAA * sumBB) : null;
+}
+
+// Summary stats for a date range (or the whole series if range is null)
+export function summarize(series, range) {
+  const rows = range
+    ? series.filter(d => d.date >= range[0] && d.date <= range[1])
+    : series;
+  const valid = rows.filter(d => d.gas !== null && d.crude !== null);
+
+  // Week-to-week changes, only between two consecutive weeks that both have data
+  const changes = [];
+  for (let i = 1; i < rows.length; i++) {
+    const prev = rows[i - 1];
+    const cur = rows[i];
+    if (prev.gas !== null && prev.crude !== null && cur.gas !== null && cur.crude !== null) {
+      changes.push([cur.gas - prev.gas, cur.crude - prev.crude]);
+    }
+  }
+
+  return {
+    start: range ? range[0] : rows[0]?.date,
+    end: range ? range[1] : rows[rows.length - 1]?.date,
+    weeks: valid.length,
+    gas: d3.mean(valid, d => d.gas),
+    crude: d3.mean(valid, d => d.crude),
+    spread: d3.mean(valid, d => d.spread),
+    crudeShare: d3.mean(valid, d => d.crude / d.gas),
+    changeCorrelation: pearson(changes),
+  };
+}

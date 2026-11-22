@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <!-- Chart 1: timeline -->
+     <!-- Chart 1: timeline -->
     <section class="panel">
       <h2 id="line-title" class="chart-title"></h2>
       <div class="legend">
@@ -41,6 +41,24 @@
         <span class="legend-item"><span class="swatch spread"></span>Spread: refining, distribution, taxes, margin</span>
       </div>
       <div id="line-chart" class="chart"></div>
+
+      <div class="overview-header">
+        <span class="control-label">Drag across the strip below to zoom into a period</span>
+        <button type="button" id="reset-zoom" class="reset-button" disabled>Reset zoom</button>
+      </div>
+      <div id="overview" class="chart"></div>
+
+      <div class="summary" aria-live="polite">
+        <h3 id="summary-title" class="summary-title"></h3>
+        <div class="stats">
+          <div class="stat"><span class="stat-value" id="stat-gas"></span><span class="stat-label">Average retail price</span></div>
+          <div class="stat"><span class="stat-value" id="stat-crude"></span><span class="stat-label">Average crude cost per gallon</span></div>
+          <div class="stat"><span class="stat-value" id="stat-spread"></span><span class="stat-label">Average spread</span></div>
+          <div class="stat"><span class="stat-value" id="stat-share"></span><span class="stat-label">Crude's share of the pump price</span></div>
+          <div class="stat"><span class="stat-value" id="stat-corr"></span><span class="stat-label">Correlation of weekly changes</span></div>
+        </div>
+      </div>
+
       <p class="source">Source: U.S. Energy Information Administration (weekly retail prices, WTI spot price); BLS CPI-U for inflation adjustment.</p>
     </section>
 
